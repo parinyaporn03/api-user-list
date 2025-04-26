@@ -1,4 +1,3 @@
-import React from "react";
 import { useParams } from "react-router-dom";
 import { useGetSingleUserQuery } from "../services/ExampleService/ExampleService";
 import { Link } from "react-router-dom";
@@ -9,13 +8,7 @@ const UserDetail = () => {
   const { data, isLoading, isFetching } = useGetSingleUserQuery({
     id: number_id,
   });
-  // if (status === 404) {
-  //   return (
-  //     <>
-  //       <div>Not Found...</div>
-  //     </>
-  //   );
-  // }
+
   return (
     <div>
       {isLoading || isFetching ? (
@@ -64,7 +57,7 @@ const UserDetail = () => {
             </div>
           </div>
           <Link
-            to="/"
+            to="/api-user-list"
             className="bg-blue-200 text-[#004E65] p-2 w-fit rounded-lg"
           >
             Go To List User Page

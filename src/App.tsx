@@ -22,7 +22,7 @@ function App() {
   const [isModalOpenDelete, setIsModalOpenDelete] = useState(false);
   const [isModalOpenCreate, setIsModalOpenCreate] = useState(false);
   const [id_user, setIdUser] = useState<number | undefined>();
-  const [deleteUser, result_delete] = useDeleteUserMutation();
+  const [deleteUser] = useDeleteUserMutation();
   const [createUser, result_create] = usePostCreateUserMutation();
   const [pagination_number, setPaginationNumber] = useState<{
     page: number;

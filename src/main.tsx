@@ -11,8 +11,10 @@ createRoot(document.getElementById("root")!).render(
     <Provider store={store}>
       <BrowserRouter>
         <Routes>
-          <Route element={<App />} index={true} />
-          <Route element={<UserDetail />} path="user-detail/:id" />
+          <Route path="/api-user-list">
+            <Route element={<App />} index={true} />
+            <Route element={<UserDetail />} path="user-detail/:id" />
+          </Route>
         </Routes>
       </BrowserRouter>
     </Provider>

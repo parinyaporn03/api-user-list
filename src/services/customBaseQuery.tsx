@@ -1,8 +1,8 @@
 // 5
 import { fetchBaseQuery, BaseQueryFn } from "@reduxjs/toolkit/query/react";
 import { FetchArgs, FetchBaseQueryError } from "@reduxjs/toolkit/query";
-import { message } from "antd";
-
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 export const customBaseQuery: BaseQueryFn<
   string | FetchArgs,
   unknown,
@@ -16,7 +16,11 @@ export const customBaseQuery: BaseQueryFn<
     return {
       error: {
         code: result.error.status || 500,
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
         message: result.error.data?.message || "error",
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
         error: result.error.data?.error || "Unknow error",
       },
     };
