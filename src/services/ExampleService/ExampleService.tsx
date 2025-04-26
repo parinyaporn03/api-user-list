@@ -24,6 +24,7 @@ const exampleApi = createApi({
           per_page: data.per_page.toString(),
         });
         return {
+          headers: { "x-api-key": "reqres-free-v1" },
           url: `api/users?${param}`,
           method: "GET",
         };
@@ -33,6 +34,7 @@ const exampleApi = createApi({
     getSingleUser: builder.query<SingleUserResponse, { id: number }>({
       query: (data) => {
         return {
+          headers: { "x-api-key": "reqres-free-v1" },
           url: `api/users/${data.id}`,
           method: "GET",
         };
@@ -42,6 +44,7 @@ const exampleApi = createApi({
     postCreateUser: builder.mutation<CreateUserResponse, CreateUserRequest>({
       query: (data) => {
         return {
+          headers: { "x-api-key": "reqres-free-v1" },
           url: `api/users/`,
           method: "POSt",
           body: data,
@@ -52,6 +55,7 @@ const exampleApi = createApi({
     deleteUser: builder.mutation<TypeResponse<void>, { id: number }>({
       query: (data) => {
         return {
+          headers: { "x-api-key": "reqres-free-v1" },
           url: `api/users/${data.id}`,
           method: "DELETE",
         };
